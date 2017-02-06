@@ -1,2 +1,21 @@
-<h1>Coaching#answer</h1>
-<p>Find me in app/views/coaching/answer.html.erb</p>
+
+<div id="you">
+  <h2>You:</h2>
+  <h3><%= @question %></h3>
+</div>
+
+<div id="coach">
+  <h2>Your coach answer:</h2>
+  <h3><% if @question.end_with?"?" %>
+        <%= "Silly question, get dressed and go to work!" %>
+      <% elsif @question == "I am going to work right now!" %>
+        <%= "" %>
+      <% elsif @question.is_a?(String) %>
+        <%= "I don't care, get dressed and go to work!" %>
+      <% end %>
+  </h3>
+</div>
+
+<div >
+  <%= link_to "Ask a new question", "/ask" %>
+</div>
